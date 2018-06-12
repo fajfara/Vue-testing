@@ -7,6 +7,7 @@
 </template>
 
 <script>
+// Importanje vse komponentve v en file
 import Header from './components/header.vue';
 import Footer from './components/footer.vue';
 import Main from './components/Main.vue';
@@ -17,6 +18,7 @@ import Add from './components/add.vue';
 
 export default {
     components:{
+
         'app-header': Header,
         'app-footer': Footer,
         'app-main': Main,

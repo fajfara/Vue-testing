@@ -20,33 +20,38 @@
 </template>
 
 <script>
+// Ponovno import axios za HTTP request
 import axios from 'axios'
-import VueJsonPretty from 'vue-json-pretty'
 
 export default {
     data () {
         return {
-          userJson: '',
-          errorContent: '',
-          indexOfSavedFile: '',
-          showError: false,
-          showSuccess: false
+            // Variabile
+            userJson: '',
+            errorContent: '',
+            indexOfSavedFile: '',
+            showError: false,
+            showSuccess: false
 
         }
     },
     methods: {
         fetch: function(){
+            // Ko user klikne na gumb save data, zaženi try catch
             try {
+                // Testiraj ali je text v JSON formatu
                 JSON.parse(this.userJson);
                 this.errorContent = ''
                 this.showError = false;
             } catch (err) {
+                // Če ni JSON format se izvede koda v catchu
                 this.errorContent ='JSON you entered is not valid, please use valid JSON format.'
                 this.showSuccess = false
                 this.showError = true;
                 return;
             }
             var vm = this;
+            // Axios POST request
             axios.post('http://localhost:3333/api/add', JSON.parse(vm.userJson)).then(function (response) {
                 vm.showSuccess = true
                 vm.indexOfSavedFile = "Success!! Saved data in a file with index: " + response.data.number;
@@ -56,9 +61,6 @@ export default {
                 console.log(error);
             });
         }
-    },
-    components: {
-        VueJsonPretty
     }
 }
 </script>
