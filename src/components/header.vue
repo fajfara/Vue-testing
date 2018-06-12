@@ -9,7 +9,7 @@
 export default {
     data () {
         return {
-          title: 'Vue Ninjas'
+          title: 'Index View'
         }
     }
 }
@@ -23,4 +23,5 @@ export default {
     h1
         color: #222
         text-align: center
+        font-family: 'Roboto', sans-serif
 </style>

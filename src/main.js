@@ -1,11 +1,20 @@
-
+// Importanje vse potrebnih datotek
 import Vue from 'vue'
+// Main vue file
 import App from './App.vue'
-//import Ninjas from './Ninjas.vue'
+// Router za linke/route
+import VueRouter from 'vue-router'
+import Routes from './routes'
 
-//Vue.component('ninjas', Ninjas);
+Vue.use(VueRouter)
 
+const router = new VueRouter({
+  routes: Routes
+});
+
+// Inicializacija vue aplikacije
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router: router
 })

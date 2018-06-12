@@ -1,7 +1,7 @@
 <template>
     <div>
         <app-header></app-header>
-        <app-ninjas></app-ninjas>
+            <router-view></router-view>
         <app-footer></app-footer>
     </div>
 </template>
@@ -9,13 +9,18 @@
 <script>
 import Header from './components/header.vue';
 import Footer from './components/footer.vue';
-import Ninjas from './components/Ninjas.vue';
+import Main from './components/Main.vue';
+import Add from './components/add.vue';
+
+
+
 
 export default {
     components:{
         'app-header': Header,
         'app-footer': Footer,
-        'app-ninjas': Ninjas
+        'app-main': Main,
+        'app-add': Add
     },
     data () {
         return {
@@ -26,5 +31,5 @@ export default {
 </script>
 
 <style>
-
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700');
 </style>
